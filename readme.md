@@ -31,81 +31,78 @@ To start project:
 3. php artisan serve (running on 127.0.0.1:8000)
 
 
-........
+-----------
 API:
 
 - Get Token:
-
-Endpoint: [GET] localhost:8000/api/api-token/generate
-Request: -
-Response:
-        4c6a6ca7c772da604f33b80218acd5a9
++ Endpoint: [GET] localhost:8000/api/api-token/generate
++ Request: -
++ Response: 4c6a6ca7c772da604f33b80218acd5a9
 
 
 - Calculate
-
-Endpoint: [POST] localhost:8000/api/tax/calculate
-Request: (JSON)
-    {
-    	"items" : [
-    		{
-    			"name" : "Lucky Stretch",
-    			"tax_code" : 2,
-    			"price" : 1000
-    		},
-    		{
-    			"name" : "Big Mac",
-    			"tax_code" : 1,
-    			"price" : 1000
-    		},
-    		{
-    			"name" : "Movie",
-    			"tax_code" : 3,
-    			"price" : 150
-    		}
-    	]
-    }
-Header:
-    Content-Type : application/json
-    API-TOKEN : (get from api/api-token/generate)
-Response:
-    {
-      "error": [],
-      "data": {
-        "bills": {
-          "items": [
-            {
-              "name": "Lucky Stretch",
-              "tax_code": 2,
-              "type": "Tobacco",
-              "refundable": 0,
-              "price": 1000,
-              "tax": 30,
-              "amount": 1030
-            },
-            {
-              "name": "Big Mac",
-              "tax_code": 1,
-              "type": "Food & Beverage",
-              "refundable": 1,
-              "price": 1000,
-              "tax": 100,
-              "amount": 1100
-            },
-            {
-              "name": "Movie",
-              "tax_code": 3,
-              "type": "Entertainment",
-              "refundable": 0,
-              "price": 150,
-              "tax": 0.5,
-              "amount": 150.5
-            }
-          ],
-          "price_subtotal": 2150,
-          "tax_subtotal": 130.5,
-          "grand_total": 2280.5
++ Endpoint: [POST] localhost:8000/api/tax/calculate
++ Request: (JSON)
+{
+    "items" : [
+        {
+            "name" : "Lucky Stretch",
+            "tax_code" : 2,
+            "price" : 1000
+        },
+        {
+            "name" : "Big Mac",
+            "tax_code" : 1,
+            "price" : 1000
+        },
+        {
+            "name" : "Movie",
+            "tax_code" : 3,
+            "price" : 150
         }
-      }
+    ]
+}
++ Header:
+> Content-Type : application/json
+> API-TOKEN : (get from api/api-token/generate)
++ Response:
+{
+  "error": [],
+  "data": {
+    "bills": {
+      "items": [
+        {
+          "name": "Lucky Stretch",
+          "tax_code": 2,
+          "type": "Tobacco",
+          "refundable": 0,
+          "price": 1000,
+          "tax": 30,
+          "amount": 1030
+        },
+        {
+          "name": "Big Mac",
+          "tax_code": 1,
+          "type": "Food & Beverage",
+          "refundable": 1,
+          "price": 1000,
+          "tax": 100,
+          "amount": 1100
+        },
+        {
+          "name": "Movie",
+          "tax_code": 3,
+          "type": "Entertainment",
+          "refundable": 0,
+          "price": 150,
+          "tax": 0.5,
+          "amount": 150.5
+        }
+      ],
+      "price_subtotal": 2150,
+      "tax_subtotal": 130.5,
+      "grand_total": 2280.5
     }
-......
+  }
+}
+-----------
