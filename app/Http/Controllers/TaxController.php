@@ -118,7 +118,7 @@ class TaxController
     public static function calculate(Request $request) {
         $rules = [
             'items' => 'required | array | min:1',
-            'items.*.name' => 'required | string',
+            'items.*.name' => 'required | string | exists:items,name',
             'items.*.tax_code' => 'required | int | in:1,2,3',
             'items.*.price' => 'required | int | min:0'
         ];
