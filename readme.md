@@ -26,9 +26,9 @@ Steps:
 
 To start project:
 
-1. php artisan migrate (to create table that needed)
-2. php artisan db:seed --class=ItemsTableSeeder (to add data items)
-3. php artisan serve (running on 127.0.0.1:8000)
+1. `php artisan migrate` (to create table that needed)
+2. `php artisan db:seed --class=ItemsTableSeeder` (to add data items)
+3. `php artisan serve` (running on 127.0.0.1:8000)
 
 
 -----------
