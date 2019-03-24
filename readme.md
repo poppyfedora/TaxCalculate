@@ -43,68 +43,70 @@ API:
 2. Calculate
 - Endpoint: [POST] localhost:8000/api/tax/calculate
 - Request: (JSON)
-
-&nbsp;{
-&nbsp;&nbsp;"items" : [
-&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;"name" : "Lucky Stretch",
-&nbsp;&nbsp;&nbsp;&nbsp;"tax_code" : 2,
-&nbsp;&nbsp;&nbsp;&nbsp;"price" : 1000
-&nbsp;&nbsp;&nbsp;},
-&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;"name" : "Big Mac",
-&nbsp;&nbsp;&nbsp;&nbsp;"tax_code" : 1,
-&nbsp;&nbsp;&nbsp;&nbsp;"price" : 1000
-&nbsp;&nbsp;&nbsp;},
-&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;"name" : "Movie",
-&nbsp;&nbsp;&nbsp;&nbsp;"tax_code" : 3,
-&nbsp;&nbsp;&nbsp;&nbsp;"price" : 150
-&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;]
-&nbsp;}
-
+```
+{
+	"items" : [
+		{
+			"name" : "Lucky Stretch",
+			"tax_code" : 2,
+			"price" : 1000
+		},
+		{
+			"name" : "Big Mac",
+			"tax_code" : 1,
+			"price" : 1000
+		},
+		{
+			"name" : "Movie",
+			"tax_code" : 3,
+			"price" : 150
+		}
+	]
+}
+```
 - Header:
-&nbsp;&nbsp;Content-Type : application/json
-&nbsp;&nbsp;API-TOKEN : (get from api/api-token/generate)
+ - Content-Type : application/json
+ - API-TOKEN : (get from api/api-token/generate)
 - Response:
-&nbsp;{
-&nbsp;&nbsp;"error": [],
-&nbsp;&nbsp;"data": {
-&nbsp;&nbsp;&nbsp;"bills": {
-&nbsp;&nbsp;&nbsp;&nbsp;"items": [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Lucky Stretch",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tax_code": 2,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "Tobacco",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"refundable": 0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price": 1000,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tax": 30,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"amount": 1030
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Big Mac",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tax_code": 1,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "Food & Beverage",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"refundable": 1,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price": 1000,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tax": 100,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"amount": 1100
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Movie",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tax_code": 3,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "Entertainment",
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"refundable": 0,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price": 150,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tax": 0.5,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"amount": 150.5
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;],
-&nbsp;&nbsp;&nbsp;&nbsp;"price_subtotal": 2150,
-&nbsp;&nbsp;&nbsp;&nbsp;"tax_subtotal": 130.5,
-&nbsp;&nbsp;&nbsp;&nbsp;"grand_total": 2280.5
-&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;}
-&nbsp;}
+```
+{
+  "error": [],
+  "data": {
+    "bills": {
+      "items": [
+        {
+          "name": "Lucky Stretch",
+          "tax_code": 2,
+          "type": "Tobacco",
+          "refundable": 0,
+          "price": 1000,
+          "tax": 30,
+          "amount": 1030
+        },
+        {
+          "name": "Big Mac",
+          "tax_code": 1,
+          "type": "Food & Beverage",
+          "refundable": 1,
+          "price": 1000,
+          "tax": 100,
+          "amount": 1100
+        },
+        {
+          "name": "Movie",
+          "tax_code": 3,
+          "type": "Entertainment",
+          "refundable": 0,
+          "price": 150,
+          "tax": 0.5,
+          "amount": 150.5
+        }
+      ],
+      "price_subtotal": 2150,
+      "tax_subtotal": 130.5,
+      "grand_total": 2280.5
+    }
+  }
+}
+```
 -----------
